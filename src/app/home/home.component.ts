@@ -27,8 +27,6 @@ export class HomeComponent {
   housingService: HousingService = inject(HousingService);
 
   constructor() {
-    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
-      this.housingLocationList = housingLocationList;
-    });
+    this.housingLocationList = this.housingService.getAllHousingLocations();
   }
 }
